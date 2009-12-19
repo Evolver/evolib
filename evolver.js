@@ -36,6 +36,24 @@ var config =lib.config ={
   'root': '/'
 };
 
+// error exception
+var Error =lib.Error =function( message, code, data) {
+  this.message =message;
+  this.code =code !==undefined ? code : null;
+  this.data =data !==undefined ? data : null;
+};
+
+with( Error) {
+  // error code
+  prototype.code =null;
+  
+  // error message
+  prototype.message =null;
+  
+  // additional data
+  prototype.data =null;
+}
+
 // debugging function (can be overriden from the outer world to receive
 //  debugging info)
 lib.debug =function( namespace, msg) {
