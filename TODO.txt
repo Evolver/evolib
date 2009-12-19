@@ -1,0 +1,4 @@
+
+AJAX: implement timeouts for async requests, implement better API for working with request headers, implement features over AJAX module
+
+LIB: implement library building script
