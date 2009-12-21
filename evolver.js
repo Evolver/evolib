@@ -63,19 +63,21 @@ with( Error) {
 //  debugging info)
 lib.debug =function( namespace, msg) {
   // override to read debug info
-  throw 'evolib' +(namespace ===null ? '' : ' (' +namespace +')') +': ' +msg;
+  throw new ErrorException( 'evolib' +(namespace ===null ? '' : ' (' +namespace +')') +': ' +msg);
 };
 
 // get reference to namespace
-lib.namespace =function( namespace, create) {
-  if( create ===undefined)
+lib.namespace =function( namespace, create, rootObject) {
+  if( create ===undefined || create ===null)
     create =true;
+  if( rootObject ===undefined || rootObject ===null)
+    rootObject =lib;
   
   // separate namespace in parts
   var parts =namespace.split( '.');
   
   // lookup object to return
-  var ret =lib;
+  var ret =rootObject;
   var part;
   for( var i =0; i < parts.length; ++i) {
     part =parts[i];
@@ -102,6 +104,12 @@ lib.namespace =function( namespace, create) {
   
   // return namespace reference
   return ret;
+};
+
+// get reference to class/function. Actually it is an alias
+// of lib.namespace
+lib.class =function( className, rootObject) {
+  return lib.namespace( className, undefined, rootObject);
 };
 
 // return predefined namespace instance
@@ -367,7 +375,7 @@ lib.globalEval =function( js, thisObj) {
 lib.removeNode =function( node) {
   // element can be removed from DOM?
   if( node.parentNode ===undefined)
-    throw 'Element can not be removed from DOM.';
+    throw new ErrorException( 'Element can not be removed from DOM');
   // is element already removed from DOM?
   if( node.parentNode ===null)
     return;// not present in DOM
@@ -529,6 +537,23 @@ lib.getData =function( elem, key) {
   } else
     // has no data stored
     return undefined;
+};
+
+// parse JSON
+
+// parseJson( data)
+lib.parseJson =function( jsonString) {
+  try {
+    // parse JSON
+    return eval( '(' +json +')');
+    
+  } catch( e) {
+    // failed to parse JSON
+    lib.debug( null, 'parseJson() : got exception "' +e +'" while parsing JSON data');
+    
+    // return undefined
+    return undefined;
+  }
 };
   
 })( window.evolver ={});
