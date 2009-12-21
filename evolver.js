@@ -52,6 +52,11 @@ with( Error) {
   
   // additional data
   prototype.data =null;
+  
+  // export as string
+  prototype.toString =function() {
+    return this.message +' (code ' +(this.code ===null ? 'not specified' : this.code) +')';
+  };
 }
 
 // debugging function (can be overriden from the outer world to receive
