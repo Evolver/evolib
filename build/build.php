@@ -19,6 +19,8 @@ function lib_file( $path) {
 file_put_contents( __DIR__ .'/evolver.js',
   // build library core
   lib_file( 'core.js') ."\n\n" .
+  lib_file( 'attr.js') ."\n\n" .
+  lib_file( 'data.js') ."\n\n" .
   lib_file( 'dom.js') ."\n\n" .
   lib_file( 'html.js') ."\n\n" .
   lib_file( 'css/sizzle.js') ."\n\n" .
