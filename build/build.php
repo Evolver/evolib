@@ -28,7 +28,8 @@ file_put_contents( __DIR__ .'/evolver.js',
   lib_file( 'event.js') ."\n\n" .
   lib_file( 'event/custom/remove.js') ."\n\n" .
   lib_file( 'event/mouseenter_mouseleave.js') ."\n\n" .
-  lib_file( 'ajax.js')
+  lib_file( 'ajax.js') ."\n\n" .
+  lib_file( 'anim.js')
 );
 
 ?>
