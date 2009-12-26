@@ -7,8 +7,3 @@ EVENT: documentation for custom event API
 EVENT: implement mouseenter/mouseleave events
 
 EVENT.mouseenter/EVENT.mouseleave: fix mouseenter/mouseleave misbehaving when moving mouse too fast
-
-ANIM: implement possibility to cancel ongoing animations for element/elements/all elements.
-Currently started animation's completion callbacks should be called.
-
-Animations that are pending in AnimationQueue are being removed with no callback execution (this should be configurable).
