@@ -5,5 +5,3 @@ LIB: implement library building script
 
 EVENT: documentation for custom event API
 EVENT: implement mouseenter/mouseleave events
-
-EVENT.mouseenter/EVENT.mouseleave: fix mouseenter/mouseleave misbehaving when moving mouse too fast
