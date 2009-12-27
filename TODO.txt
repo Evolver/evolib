@@ -5,3 +5,5 @@ LIB: implement library building script
 
 EVENT: documentation for custom event API
 EVENT: implement mouseenter/mouseleave events
+
+ANIM: implement formula callbacks to apply correct easings
