@@ -17,7 +17,7 @@ function lib_file( $path) {
 // Library package builder
 
 file_put_contents( __DIR__ .'/evolver.js',
-  // build library core
+  lib_file( 'bugs.js') ."\n\n" .
   lib_file( 'core.js') ."\n\n" .
   lib_file( 'url.js') ."\n\n" .
   lib_file( 'cookie.js') ."\n\n" .
@@ -29,10 +29,13 @@ file_put_contents( __DIR__ .'/evolver.js',
   lib_file( 'css.js') ."\n\n" .
   lib_file( 'event.js') ."\n\n" .
   lib_file( 'event/custom/remove.js') ."\n\n" .
+  lib_file( 'event/custom/css.js') ."\n\n" .
   lib_file( 'event/mouseenter_mouseleave.js') ."\n\n" .
   lib_file( 'ajax.js') ."\n\n" .
   lib_file( 'anim.js') ."\n\n" .
-  lib_file( 'anim/effect.js')
+  lib_file( 'anim/effect.js')/* ."\n\n" .*/
+  //lib_file( 'controls.js') ."\n\n" .
+  //lib_file( 'controls/advanced.js')
 );
 
 ?>
