@@ -16,7 +16,21 @@ function lib_file( $path) {
 
 // Library package builder
 
+$authorNote =<<<NOTE
+/**
+ * Evolib - Evolver's JavaScript library.
+ * http://github.com/Evolver/evolib
+ *
+ * Copyright (C) 2010 Dmitry Stepanov <dmitrij@stepanov.lv>
+ * URL: http://www.stepanov.lv
+ *
+ * Publicly available for non-commercial use under GPL v2 license terms.
+ */
+
+NOTE;
+
 file_put_contents( __DIR__ .'/evolver.js',
+	$authorNote .
   lib_file( 'bugs.js') ."\n\n" .
   lib_file( 'core.js') ."\n\n" .
   lib_file( 'url.js') ."\n\n" .
