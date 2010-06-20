@@ -8,4 +8,4 @@ LIB: implement library building script
 EVENT: documentation for custom event API
 EVENT: implement mouseenter/mouseleave events
 
-ANIM: implement formula callbacks to apply correct easings
+ANIM: implement easings using bezier curve calculations (http://en.wikipedia.org/wiki/B%C3%A9zier_curve)
