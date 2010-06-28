@@ -36,7 +36,6 @@ file_put_contents( __DIR__ .'/evolver.js',
   lib_file( 'bugs.js') ."\n\n" .
   lib_file( 'core.js') ."\n\n" .
   lib_file( 'core.Map.js') ."\n\n" .
-  lib_file( 'url.js') ."\n\n" .
   lib_file( 'cookie.js') ."\n\n" .
   lib_file( 'attr.js') ."\n\n" .
   lib_file( 'data.js') ."\n\n" .
