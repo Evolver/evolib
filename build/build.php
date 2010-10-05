@@ -33,9 +33,11 @@ NOTE;
 
 file_put_contents( __DIR__ .'/evolver.js',
 	$authorNote .
+	lib_file( 'std/String.prototype.js') ."\n\n" .
   lib_file( 'bugs.js') ."\n\n" .
   lib_file( 'core.js') ."\n\n" .
   lib_file( 'core.Map.js') ."\n\n" .
+  lib_file( 'lang.js') ."\n\n" .
   lib_file( 'cookie.js') ."\n\n" .
   lib_file( 'attr.js') ."\n\n" .
   lib_file( 'data.js') ."\n\n" .
